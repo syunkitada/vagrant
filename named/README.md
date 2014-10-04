@@ -5,16 +5,16 @@
 * BIND
 
 ## インストール
-[ダウンロードサイト](http://www.isc.org/downloads/bind/)よりインストール
+まずは、[ダウンロードサイト](http://www.isc.org/downloads/bind/)よりインストール。
 
-インストール時の設定項目は以下のようにした（デフォルトのまま、パスワードだけ変えただけ）
+インストール時の設定項目は以下のようにした（デフォルトのまま、パスワードを設定しただけ）
 * Target Directory: C:\Program Files\ISC BIND 9
 * Service Account Name: named
 * Password: ****
 
 インストール後、"C:\Program Files\ISC BIND 9\bin"  は、PATHに登録しておく。
 
-C:\Program Files\ISC BIND 9\etc に設定ファイルを配置し、
+"C:\Program Files\ISC BIND 9\etc" に設定ファイルを配置し、
 namedサービスを起動すると完了。  
 また、初期状態では設定ファイルが存在しないので起動に失敗します。
 
@@ -43,15 +43,15 @@ test01.vagrant.mydns.jp. 86400  IN      A       192.168.11.50
 ### リゾルバをlocalhostに変更する
 Linuxだと/etc/resolv.confでリゾルバを設定するが、Windowsだと各ネットワークデバイスのプロパティを編集する必要がある。
 
-* プログラムとファイルの検索から"ネットワーク接続の表示"を開く。
+* プログラムとファイルの検索から"ネットワーク接続の表示"を開く
 * ネットワークデバイスのプロパティを開く
 * 接続項目から"インターネット プロトコル バージョン 4"の選択肢プロパティを開く
 * "次のDNSサーバのアドレスを使う"にチェックを入れて、DNSサーバのIPを設定する
     * 優先DNSサーバ: 127.0.0.1
     * 代替DNSサーバ: 192.168.11.1
 
-設定後にdigをすると、デフォルトのリゾルバが127.0.0.1となる。
-```
+設定後にdigをすると、デフォルトのリゾルバが127.0.0.1となっていることが確認できる。
+``` bash
 $ dig dev01.vagrant.mydns.jp
 
 ;; ANSWER SECTION:
