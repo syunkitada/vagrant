@@ -1,0 +1,14 @@
+$TTL 86400
+@ IN SOA www.vagrant.mydns.jp. syun.kitada.gmail.com.(
+	2014100401  ; serial
+	3600        ; refresh 1hr
+	900         ; retry 15min
+	604800      ; expire 1w
+	86400)      ; min 24hr
+
+        IN  NS      www.vagrant.mydns.jp.
+www     IN  A       192.168.11.2
+code    IN  CNAME   www
+
+dev01  IN  A       192.168.33.50
+dev02  IN  A       192.168.33.51
