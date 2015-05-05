@@ -5,7 +5,7 @@
 
 
 ## Vagrantとは
-VagrantとはVMM(主にVirtualBox)を利用して仮想の開発環境の作成、管理するためのツールです。
+VagrantとはVMM(主にVirtualBox)を利用して仮想の開発環境の作成、管理するためのツールです。  
 使い勝手はvirshに似ている。
 
 
@@ -14,7 +14,7 @@ VagrantとはVMM(主にVirtualBox)を利用して仮想の開発環境の作成�
 
 私の環境は、Windowsを利用しており、インストール後にCygwinからvagrantコマンドが実行できるようになりました。
 
-しかし、vagrantコマンドを実行した時に以下の様なエラーが出ました。
+しかし、vagrantコマンドを実行した時に以下の様なエラーが出ました。(出ない時もある)
 
 ```
 Vagrant could not detect VirtualBox! Make sure VirtualBox is properly installed.
@@ -30,7 +30,7 @@ this to be available on the PATH. If VirtualBox is installed, please find the
 
 環境変数を追加したのち、Cygwinを再起動したところ無事 vagrantコマンドが実行できるようになりました。
 
-また、vagrantのデータは、デフォルトでは C:\Documents and Settings/hogehoge/.vagrant.d に保存されます。これは、環境変数VAGRANT_HOMEに値を設定することで、データの格納先を変更できます。
+また、vagrantのデータは、デフォルトでは C:\Users/[username]/.vagrant.d に保存されます。これは、環境変数VAGRANT_HOMEに値を設定することで、データの格納先を変更できます。
 
 
 ## 使い方
@@ -86,7 +86,7 @@ $ vagrant init centos65
 Vagrantfileを作成したら、以下のコマンドで仮想マシンの起動や停止といった操作が可能になります。
 
 | コマンド    | 操作                                                                                            |
-|:------------|------------------------------------------------------------------------------------------------:|
+|:------------|:------------------------------------------------------------------------------------------------|
 | up          | 仮想マシンの起動（仮想マシンが作成されてなかったら作成も行う）                                  |
 | status      | 仮想マシンの状態を表示する                                                                      |
 | suspend     | サスペンド (vagrant upで再開)                                                                   |
