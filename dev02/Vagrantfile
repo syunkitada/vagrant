@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "centos65_3"
   config.vm.hostname = "dev02.vagrant.mydns.jp"
-  config.vm.network :private_network, ip:"192.168.33.51", virtualbox__intnet: "intnet"
+  config.vm.network :private_network, ip:"192.168.11.42", virtualbox__intnet: "intnet"
   config.ssh.forward_agent = true
 
   # The url from where the 'config.vm.box' box will be fetched if it

@@ -1,0 +1,22 @@
+$TTL 86400
+@ IN SOA www.qemu.mydns.jp. syun.kitada.gmail.com.(
+	2015052300  ; serial
+	3600        ; refresh 1hr
+	900         ; retry 15min
+	604800      ; expire 1w
+	86400)      ; min 24hr
+
+        IN  NS      www.qemu.mydns.jp.
+www     IN  A       192.168.11.2
+code    IN  CNAME   www
+
+hv     IN  A       192.168.11.50
+dev01  IN  A       192.168.11.61
+dev02  IN  A       192.168.11.62
+dev03  IN  A       192.168.11.63
+dev04  IN  A       192.168.11.64
+dev05  IN  A       192.168.11.65
+dev06  IN  A       192.168.11.66
+dev07  IN  A       192.168.11.67
+dev08  IN  A       192.168.11.68
+dev09  IN  A       192.168.11.69

@@ -11,8 +11,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "centos65"
+  # config.vm.box = "centos7"
   config.vm.hostname = "dev01.vagrant.mydns.jp"
-  config.vm.network :private_network, ip:"192.168.33.50", virtualbox__intnet: "intnet"
+  # config.vm.network :public_network, ip:"192.168.33.50", virtualbox__intnet: "intnet"
+  config.vm.network :public_network, ip:"192.168.11.41"
 
   config.ssh.forward_agent = true
 
@@ -55,6 +57,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   # Use VBoxManage to customize the VM. For example to change memory:
   #   vb.customize ["modifyvm", :id, "--memory", "1024"]
   # end
+  config.vm.provider :virtualbox do |vb|
+    # Don't boot with headless mode
+    # vb.gui = true
+  
+    # Use VBoxManage to customize the VM. For example to change memory:
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+  end
   #
   # View the documentation for the provider you're using for more
   # information on available options.
