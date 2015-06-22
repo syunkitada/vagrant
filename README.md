@@ -118,6 +118,24 @@ $ vagrant init centos65_2
 $ vagrant up
 ```
 
+### スナップショット
+``` bash
+# プラグインをインストールする
+$ vagrant plugin install vagrant-vbox-snapshot
+
+# スナップショットを取る
+$ vagrant snapshot take <snapshot name>
+
+# 一覧表示
+$ vagrant snapshot list
+
+# スナップショットの状態に移行する
+$ vagrant snapshot go <snapshot name>
+
+# スナップショットを削除する
+$ vagrant snapshot delete <snapshot name>
+```
+
 ## Vagrantfileの設定メモ
 
 ``` bash
